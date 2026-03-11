@@ -339,7 +339,7 @@ export default function App() {
                   aria-hidden="true"
                 />
                 <img
-                  src="/assets/uploads/image-1.png"
+                  src="/assets/uploads/JOY01303-1.JPEG"
                   alt="Jishnu Dey"
                   className="relative w-full aspect-[3/4] object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
                 />
@@ -420,7 +420,7 @@ export default function App() {
                 <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-accent-color mb-2">
                   What I Do
                 </p>
-                <h2 className="font-display font-black text-4xl md:text-5xl tracking-tight gradient-heading">
+                <h2 className="font-display font-black text-4xl md:text-5xl tracking-tight gradient-heading uppercase">
                   Core Expertise
                 </h2>
               </div>
@@ -470,7 +470,7 @@ export default function App() {
                 <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-accent-color mb-2">
                   Career
                 </p>
-                <h2 className="font-display font-black text-4xl md:text-5xl tracking-tight gradient-heading">
+                <h2 className="font-display font-black text-4xl md:text-5xl tracking-tight gradient-heading uppercase">
                   Experience
                 </h2>
               </div>
@@ -559,7 +559,7 @@ export default function App() {
                 <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-accent-color mb-2">
                   Academics
                 </p>
-                <h2 className="font-display font-black text-4xl md:text-5xl tracking-tight gradient-heading">
+                <h2 className="font-display font-black text-4xl md:text-5xl tracking-tight gradient-heading uppercase">
                   Education
                 </h2>
               </div>

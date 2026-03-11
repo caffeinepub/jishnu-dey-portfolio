@@ -65,14 +65,14 @@
     scroll-behavior: smooth;
   }
 
-  /* Grainy noise overlay — subtle texture on entire page */
+  /* Grainy noise overlay — more prominent texture on entire page */
   body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 9999;
-    opacity: 0.055;
+    opacity: 0.12;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23g)'/%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 320px 320px;
@@ -105,38 +105,39 @@
     -webkit-text-fill-color: transparent;
   }
 
-  /* Glass panel — for profile bio, cards */
+  /* Glass panel — more prominent frosted glass */
   .glass-panel {
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    background: rgba(255, 255, 255, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.72);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    background: rgba(255, 255, 255, 0.72);
+    border: 1.5px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 40px rgba(100, 60, 200, 0.1), 0 2px 8px
+      rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.95);
   }
 
   /* Glass pill — for skill tags */
   .glass-pill {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.52);
-    border: 1px solid rgba(180, 160, 255, 0.38);
-    box-shadow: 0 2px 12px rgba(120, 80, 220, 0.08), inset 0 1px 0
-      rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1.5px solid rgba(160, 120, 255, 0.55);
+    box-shadow: 0 4px 20px rgba(120, 80, 220, 0.14), inset 0 1px 0
+      rgba(255, 255, 255, 0.9);
     transition: box-shadow 0.2s ease, background 0.2s ease;
   }
   .glass-pill:hover {
-    background: rgba(245, 240, 255, 0.72);
-    box-shadow: 0 4px 18px rgba(120, 80, 220, 0.14), inset 0 1px 0
+    background: rgba(240, 232, 255, 0.88);
+    box-shadow: 0 6px 24px rgba(120, 80, 220, 0.2), inset 0 1px 0
       rgba(255, 255, 255, 0.9);
   }
 
   /* Glass card — for experience rows */
   .glass-card {
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.68);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04),
-      inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    background: rgba(255, 255, 255, 0.68);
+    border: 1.5px solid rgba(255, 255, 255, 0.88);
+    box-shadow: 0 8px 40px rgba(100, 60, 200, 0.09), 0 2px 8px
+      rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.95);
   }
 }
