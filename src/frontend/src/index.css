@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0.98 0.006 80;
+    --foreground: 0.14 0.018 260;
+
+    --card: 0.97 0.006 80;
+    --card-foreground: 0.14 0.018 260;
+
+    --popover: 0.98 0.006 80;
+    --popover-foreground: 0.14 0.018 260;
+
+    --primary: 0.57 0.19 38;
+    --primary-foreground: 0.99 0.002 80;
+
+    --secondary: 0.93 0.01 80;
+    --secondary-foreground: 0.14 0.018 260;
+
+    --muted: 0.93 0.008 80;
+    --muted-foreground: 0.52 0.02 260;
+
+    --accent: 0.57 0.19 38;
+    --accent-foreground: 0.99 0.002 80;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.99 0.002 80;
+
+    --border: 0.88 0.012 80;
+    --input: 0.88 0.012 80;
+    --ring: 0.57 0.19 38;
+
+    --radius: 0.25rem;
+
+    --chart-1: 0.57 0.19 38;
+    --chart-2: 0.65 0.16 160;
+    --chart-3: 0.55 0.18 270;
+    --chart-4: 0.72 0.15 80;
+    --chart-5: 0.48 0.18 330;
+
+    --sidebar: 0.96 0.006 80;
+    --sidebar-foreground: 0.14 0.018 260;
+    --sidebar-primary: 0.57 0.19 38;
+    --sidebar-primary-foreground: 0.99 0.002 80;
+    --sidebar-accent: 0.93 0.01 80;
+    --sidebar-accent-foreground: 0.14 0.018 260;
+    --sidebar-border: 0.88 0.012 80;
+    --sidebar-ring: 0.57 0.19 38;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    position: relative;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Grainy noise overlay — subtle texture on entire page */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.055;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23g)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 320px 320px;
+  }
+}
+
+@layer utilities {
+  .text-accent-color {
+    color: oklch(var(--accent));
+  }
+  .bg-accent-color {
+    background-color: oklch(var(--accent));
+  }
+  .border-accent-color {
+    border-color: oklch(var(--accent));
+  }
+
+  /* Vibrant gradient for all major headings */
+  .gradient-heading {
+    background: linear-gradient(
+      135deg,
+      oklch(0.45 0.29 278) 0%,
+      oklch(0.52 0.28 320) 40%,
+      oklch(0.6 0.24 12) 75%,
+      oklch(0.68 0.2 50) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Glass panel — for profile bio, cards */
+  .glass-panel {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Glass pill — for skill tags */
+  .glass-pill {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.52);
+    border: 1px solid rgba(180, 160, 255, 0.38);
+    box-shadow: 0 2px 12px rgba(120, 80, 220, 0.08), inset 0 1px 0
+      rgba(255, 255, 255, 0.8);
+    transition: box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .glass-pill:hover {
+    background: rgba(245, 240, 255, 0.72);
+    box-shadow: 0 4px 18px rgba(120, 80, 220, 0.14), inset 0 1px 0
+      rgba(255, 255, 255, 0.9);
+  }
+
+  /* Glass card — for experience rows */
+  .glass-card {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  }
+}
