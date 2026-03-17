@@ -108,6 +108,39 @@ const education = [
   },
 ];
 
+const projects = [
+  {
+    title: "Reel content for Clothing Brand",
+    category: "Video & Reels",
+    url: "https://www.behance.net/gallery/245974921/Reel-content-for-Clothing-Brand",
+  },
+  {
+    title: "Designs for a Kolkata based Pilates Studio",
+    category: "Brand Identity",
+    url: "https://www.behance.net/gallery/245661883/Designs-for-a-Kolkata-based-Pilates-Studio",
+  },
+  {
+    title: "Flyers & Brochures for US based Clients",
+    category: "Print Design",
+    url: "https://www.behance.net/gallery/245661435/Flyers-Brochures-for-US-based-Clients",
+  },
+  {
+    title: "Performance Creatives for US based Apparel Brand",
+    category: "Social Media & Ads",
+    url: "https://www.behance.net/gallery/245106281/Performance-Creatives-for-US-based-Apparel-Brand",
+  },
+  {
+    title: "For a Kolkata based Apparel Brand",
+    category: "Brand Design",
+    url: "https://www.behance.net/gallery/217365435/For-a-Kolkata-based-Apparel-Brand",
+  },
+  {
+    title: "Logo Designs",
+    category: "Logo & Identity",
+    url: "https://www.behance.net/gallery/217365205/Logo-Designs",
+  },
+];
+
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -120,6 +153,7 @@ function Nav() {
   const links = [
     { href: "#profile", label: "Profile" },
     { href: "#expertise", label: "Expertise" },
+    { href: "#projects", label: "Projects" },
     { href: "#experience", label: "Experience" },
     { href: "#education", label: "Education" },
   ];
@@ -228,7 +262,7 @@ export default function App() {
         className="relative min-h-screen flex flex-col justify-end pb-16 pt-32 px-6 overflow-hidden"
         style={{ zIndex: 1 }}
       >
-        {/* Ghost decorative text */}
+        {/* Ghost decorative text — opacity reduced to 50% */}
         <div
           className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
           aria-hidden="true"
@@ -238,10 +272,30 @@ export default function App() {
             style={{
               color: "transparent",
               WebkitTextStroke: "1.5px oklch(0.88 0.012 80)",
+              opacity: 0.5,
             }}
           >
             JISHNU DEY
           </span>
+        </div>
+
+        {/* Profile photo in hero banner — right side */}
+        <div
+          className="absolute right-0 top-0 bottom-0 pointer-events-none select-none overflow-hidden hidden md:block"
+          aria-hidden="true"
+          style={{ width: "38vw" }}
+        >
+          <img
+            src="/assets/uploads/JOY01303-1.JPEG"
+            alt=""
+            className="w-full h-full object-cover object-top"
+            style={{
+              maskImage:
+                "linear-gradient(to left, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to left, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)",
+            }}
+          />
         </div>
 
         <div className="max-w-6xl mx-auto w-full relative z-10">
@@ -255,7 +309,7 @@ export default function App() {
               custom={0}
               className="font-sans font-medium text-sm uppercase tracking-[0.25em] text-accent-color mb-4"
             >
-              Creative Lead · Designer · Social Media Strategist
+              Creative Designer · Video Editor · Social Media Strategist
             </motion.p>
             <motion.h1
               variants={fadeUp}
@@ -354,7 +408,7 @@ export default function App() {
 
             {/* Bio — glass panel */}
             <motion.div variants={fadeUp} custom={1}>
-              <div className="glass-panel rounded-sm p-8 md:p-10">
+              <div className="glass-panel rounded-2xl p-8 md:p-10">
                 <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-accent-color mb-3">
                   Profile
                 </p>
@@ -379,7 +433,7 @@ export default function App() {
                 <div className="mt-10 pt-10 border-t border-border/60 grid grid-cols-3 gap-6">
                   {[
                     { n: "5+", label: "Years Experience" },
-                    { n: "20+", label: "Brands Built" },
+                    { n: "5+", label: "Brands Built" },
                     { n: "3", label: "Disciplines" },
                   ].map(({ n, label }) => (
                     <div key={label}>
@@ -448,6 +502,98 @@ export default function App() {
         </div>
       </section>
 
+      {/* ── PROJECTS ─────────────────────────────────────── */}
+      <section
+        id="projects"
+        className="py-24 px-6 bg-muted"
+        style={{ position: "relative", zIndex: 1 }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+          >
+            <motion.div
+              variants={fadeUp}
+              custom={0}
+              className="flex items-end justify-between mb-16 border-b border-border pb-6"
+            >
+              <div>
+                <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-accent-color mb-2">
+                  Selected Work
+                </p>
+                <h2 className="font-display font-black text-4xl md:text-5xl tracking-tight gradient-heading uppercase">
+                  Projects
+                </h2>
+              </div>
+              <p
+                className="font-display font-black text-7xl text-border/50 select-none leading-none"
+                aria-hidden="true"
+              >
+                03
+              </p>
+            </motion.div>
+
+            <div className="space-y-3">
+              {projects.map((project, i) => (
+                <motion.a
+                  key={project.title}
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variants={fadeUp}
+                  custom={i}
+                  data-ocid={`projects.item.${i + 1}`}
+                  className="group glass-card rounded-2xl flex items-center justify-between px-8 py-6 hover:border-accent-color transition-all duration-300 cursor-pointer block"
+                >
+                  <div className="flex items-center gap-6">
+                    <span
+                      className="font-display font-black text-2xl text-border/40 select-none group-hover:text-accent-color transition-colors"
+                      aria-hidden="true"
+                    >
+                      0{i + 1}
+                    </span>
+                    <div>
+                      <p className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-accent-color mb-1">
+                        {project.category}
+                      </p>
+                      <h3 className="font-display font-bold text-lg md:text-xl text-foreground group-hover:gradient-heading transition-colors leading-tight">
+                        {project.title}
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="flex-shrink-0 ml-6">
+                    <span className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-wider text-muted-foreground group-hover:text-accent-color transition-colors">
+                      View on Behance
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+
+            <motion.div
+              variants={fadeUp}
+              custom={6}
+              className="mt-12 text-center"
+            >
+              <a
+                href="https://www.behance.net/jishnudey"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-ocid="projects.primary_button"
+                className="inline-flex items-center gap-3 bg-foreground text-background font-display font-bold text-sm px-8 py-4 hover:bg-accent-color transition-colors"
+              >
+                View Full Portfolio on Behance
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── EXPERIENCE ───────────────────────────────────── */}
       <section
         id="experience"
@@ -478,7 +624,7 @@ export default function App() {
                 className="font-display font-black text-7xl text-border/50 select-none leading-none"
                 aria-hidden="true"
               >
-                03
+                04
               </p>
             </motion.div>
 
@@ -489,7 +635,7 @@ export default function App() {
                   variants={fadeUp}
                   custom={ei}
                   data-ocid={`experience.item.${ei + 1}`}
-                  className="glass-card rounded-sm"
+                  className="glass-card rounded-2xl"
                 >
                   <div className="py-10 px-8 grid md:grid-cols-[280px_1fr] gap-6 md:gap-12">
                     {/* Company */}
@@ -567,7 +713,7 @@ export default function App() {
                 className="font-display font-black text-7xl text-border/50 select-none leading-none"
                 aria-hidden="true"
               >
-                04
+                05
               </p>
             </motion.div>
 
@@ -578,7 +724,7 @@ export default function App() {
                   variants={fadeUp}
                   custom={i}
                   data-ocid={`education.item.${i + 1}`}
-                  className="glass-card rounded-sm p-10"
+                  className="glass-card rounded-2xl p-10"
                 >
                   <p
                     className="font-display font-black text-5xl text-border/40 select-none mb-6"
