@@ -270,7 +270,7 @@ export default function App() {
           <span
             className="font-display font-black leading-none tracking-tighter uppercase whitespace-nowrap"
             style={{
-              fontSize: "clamp(2.5rem, 10vw, 18vw)",
+              fontSize: "18vw",
               color: "transparent",
               WebkitTextStroke: "1.5px oklch(0.88 0.012 80)",
               opacity: 0.5,
