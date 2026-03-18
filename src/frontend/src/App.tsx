@@ -259,7 +259,7 @@ export default function App() {
 
       {/* ── HERO ─────────────────────────────────────────── */}
       <section
-        className="relative min-h-screen flex flex-col justify-end pb-16 pt-32 px-6 overflow-hidden"
+        className="relative min-h-screen flex flex-col justify-end pb-32 pt-32 px-6 overflow-hidden md:pb-16"
         style={{ zIndex: 1 }}
       >
         {/* Ghost decorative text — opacity reduced to 50% */}
@@ -268,8 +268,9 @@ export default function App() {
           aria-hidden="true"
         >
           <span
-            className="font-display font-black text-[18vw] leading-none tracking-tighter uppercase whitespace-nowrap"
+            className="font-display font-black leading-none tracking-tighter uppercase whitespace-nowrap"
             style={{
+              fontSize: "clamp(2.5rem, 10vw, 18vw)",
               color: "transparent",
               WebkitTextStroke: "1.5px oklch(0.88 0.012 80)",
               opacity: 0.5,
@@ -307,9 +308,13 @@ export default function App() {
             <motion.p
               variants={fadeUp}
               custom={0}
-              className="font-sans font-medium text-sm uppercase tracking-[0.25em] text-accent-color mb-4"
+              className="font-sans font-medium text-sm uppercase tracking-[0.25em] text-accent-color mb-4 leading-relaxed"
             >
-              Creative Designer · Video Editor · Social Media Strategist
+              Creative Designer
+              <span className="mx-2 opacity-50">·</span>
+              Video Editor
+              <span className="mx-2 opacity-50">·</span>
+              <span className="whitespace-nowrap">Social Media Strategist</span>
             </motion.p>
             <motion.h1
               variants={fadeUp}
